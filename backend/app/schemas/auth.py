@@ -1,8 +1,8 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from app.schemas.user_status import UserStatus
 
 class RegiterRequest (BaseModel):
-    email: str
+    email: EmailStr
     password: str
     
     
