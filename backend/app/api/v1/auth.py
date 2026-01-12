@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from app.schemas.user_status import UserStatus
-from app.schemas.auth import RegisterResponse, RegiterRequest
+from app.schemas.auth import RegisterResponse, RegiterRequest, LoginRequest, LoginResponse
 
 router = APIRouter (prefix="/auth", tags=["auth"])
 
@@ -16,5 +16,15 @@ def register(payload: RegiterRequest):
     return RegisterResponse (
         status = "ok" ,
         next_step = "upload_documents",
+        user_status=UserStatus.EN_ATTENTE,
+    )
+    
+    
+@router.post("/login", response_model=LoginResponse)
+def login(payload: LoginRequest):
+    # Pour l'instant simulation 
+    return LoginResponse(
+        access_token="demo-token",
+        token_type="bearer",
         user_status=UserStatus.EN_ATTENTE,
     )
