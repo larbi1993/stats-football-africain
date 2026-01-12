@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 from app.schemas.document_type import DocumentType
+from app.schemas.user_status import UserStatus
+
 
 
 class VerificationSubmitRequest(BaseModel):
@@ -9,3 +11,4 @@ class VerificationSubmitRequest(BaseModel):
 class VerificationSubmitResponse(BaseModel):
     status: str
     message: str
+    user_status: UserStatus

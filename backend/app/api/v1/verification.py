@@ -13,4 +13,5 @@ def submit(payload: VerificationSubmitRequest):
     return VerificationSubmitResponse(
         status="ok",
         message=f"Verification request received (document_type={payload.document_type})",
+        user_status=UserStatus.EN_ATTENTE,
     )
