@@ -4,7 +4,7 @@ from app.core.config import PROJECT_NAME, API_V1_PREFIX
 
 app = FastAPI(title=PROJECT_NAME)
  
-@app.get("/a")
+@app.get("/")
 def root() :
     return {"test 1" : "réussi"}
 
